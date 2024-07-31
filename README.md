@@ -6,7 +6,6 @@
 
 [![Github-sponsors](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/insality) [![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/insality) [![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/insality)
 
-
 # Proto
 
 **Proto** - a [Defold](https://defold.com/) library for working with protocol buffers (_protobuf_ or _proto_). The library provides functions for encoding, decoding, and verifying protocol buffer messages. Verification is used to ensure that the lua table matches the protocol buffer definition. If the table data does not match the definition, the missing fields are set to default values, and the extra fields are removed. Verification also supports nested messages.
