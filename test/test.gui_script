@@ -1,0 +1,10 @@
+local deftest = require("deftest.deftest")
+
+function init(self)
+	deftest.add(require("test.test_proto"))
+	deftest.add(require("test.test_proto_init"))
+	deftest.add(require("test.test_proto_default_values"))
+
+	local is_report = (sys.get_config("test.report") == "1")
+	deftest.run({ coverage = { enabled = is_report } })
+end

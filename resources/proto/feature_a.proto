@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package feature_a;
+
+message data {
+	uint32 time = 1;
+}

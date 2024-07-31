@@ -1,0 +1,22 @@
+local log = require("log.log")
+local proto = require("proto.proto")
+
+function init(self)
+	-- Optional: set a logger for the proto module
+	--proto.set_logger(log.get_logger("proto"))
+	
+	-- Load the proto schema from file or pass a table directly
+	proto.init("/resources/proto.json")
+
+	local data = proto.get("game.data")
+	pprint("proto.get", data)
+
+	data.id = "foobar"
+	data.number = 42
+
+	local encoded = proto.encode("game.data", data)
+	pprint("proto.encode", encoded)
+
+	local decoded = proto.decode("game.data", encoded)
+	pprint("proto.decode", decoded)
+end

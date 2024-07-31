@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+import "feature_a.proto";
+
+package game;
+
+message data {
+	string id = 1;
+	uint32 number = 2;
+	feature_a.data feature_a = 3;
+}
+
+message test {
+	message inner_table {
+		message inner_inner_table {
+			string id = 1;
+			uint32 number = 2;
+		}
+		string id = 1;
+		uint32 number = 2;
+		bool flag = 3;
+		double double_number = 4;
+		inner_inner_table inner_inner = 5;
+	}
+	string id = 1;
+	uint32 number = 2;
+	bool flag = 3;
+	double double_number = 4;
+	inner_table inner = 5;
+	repeated inner_table repeated_inner = 6;
+	map<string, inner_table> map_inner = 7;
+	string string_default_value = 8 [default = "default_value_from_proto"];
+	uint32 uint32_default_value = 9 [default = 42];
+	double double_default_value = 10 [default = 3.14];
+	bool bool_default_value = 11 [default = true];
+}
